@@ -1,7 +1,7 @@
 // routes/courses.js
 const express = require("express");
 const router = express.Router();
-const pool = require("../db"); // Imports your existing db.js connection
+const pool = require("../db"); 
 
 // ==========================================
 // 1. POST: Create a new course enrollment
