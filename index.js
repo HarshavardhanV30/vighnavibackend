@@ -10,6 +10,7 @@ const courseRoutes = require("./routes/courses");
 const careerGuidanceRoutes = require("./routes/carrerguidance");
 const internshipRoutes = require("./routes/internship");
 const workshopRoutes = require("./routes/workshop");
+const projectEnquiryRoutes = require("./routes/projectenquiry"); // Added missing route
 
 // Middleware
 app.use(cors());
@@ -20,13 +21,14 @@ app.use("/api/courses", courseRoutes);
 app.use("/api/career-guidance", careerGuidanceRoutes);
 app.use("/api/internships", internshipRoutes);
 app.use("/api/workshops", workshopRoutes);
+app.use("/api/project-enquiry", projectEnquiryRoutes); // Mounted missing route
 
 // Health check endpoint
 app.get("/", (req, res) => {
   res.send("Vighnavi Backend Server is running!");
 });
 
-// Port configuration (using 5000 for API to avoid conflict with Postgres default 5432)
+// Port configuration
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
