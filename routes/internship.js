@@ -1,10 +1,9 @@
 const express = require("express");
 const router = express.Router();
+const pool = require("../db");
 
-// Placeholder route to prevent crashes
-router.get("/", (req, res) => {
-  res.json({ message: "Route is currently under construction" });
+router.get("/all", async (req, res) => {
+  res.status(200).json({ success: true, message: "Route active" });
 });
 
-// This export line is strictly required
 module.exports = router;
